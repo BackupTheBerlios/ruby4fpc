@@ -1,0 +1,14 @@
+REQUIREMENTS
+============
+
+Requires FreePascal
+
+COMPILE
+=======
+
+Just type 'make'
+
+INSTALL
+=======
+
+Just type 'make install'
