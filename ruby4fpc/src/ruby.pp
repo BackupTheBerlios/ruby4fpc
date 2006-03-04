@@ -12,6 +12,18 @@
 
 UNIT Ruby;
 Interface
+  Uses
+  //Following Required to Link to ruby
+    Initc,  DynLibs;
+  {$linklib gcc}
+  {$linklib stdc++}
+  {$linklib crypt}
+  //Special Thanks to Olibole on FreeNode#FPC
+
+  // This Macro helps alot.
+  {$MACRO ON}
+    {$DEFINE RubyExt:=External 'ruby-static'}
+    {$DEFINE RubyDcl:=CDECL; RubyExt}
 
   {$Def ReadImp}
     {$I ruby_h.pp}
