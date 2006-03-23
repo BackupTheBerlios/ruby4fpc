@@ -126,6 +126,8 @@
 
   Function  TYPE(x: VALUE):VALUE;//#define TYPE(x) rb_type((VALUE)(x))
 
+
+
 {$ENDIF}
 {$IFDEF ReadImp}
   // MACRO TRANSLATIONS
