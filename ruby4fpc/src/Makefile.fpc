@@ -1,0 +1,7 @@
+[target]
+units = ruby
+
+
+[compiler]
+unitdir = ../units/
+unittargetdir = ../units/

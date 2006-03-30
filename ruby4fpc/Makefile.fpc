@@ -1,0 +1,7 @@
+[package]
+name = ruby4fpc
+version = 1.0
+
+[target]
+dirs = src
+exampledirs = tests
