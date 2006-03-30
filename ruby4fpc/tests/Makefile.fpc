@@ -1,3 +1,6 @@
 [target]
 programs = ruby_shell
 
+[compiler]
+unitdir = ../units/
+
