@@ -1,25 +1,14 @@
 #!/usr/local/bin/ruby
-
+require 'process.rb'
 # Author: Jon (BadQuanta) Sawyer
 
-steps = [
-  {"cmd" => "rm `find ./ -name \"*~\"`", "lbl" => "Cleaning Backupfiles","fail" => false },
-	{"cmd" => "fpcmake -r",                "lbl" => "Creating Makefiles",  "fail" => true },
-	{"cmd" => "make clean",                "lbl" => "Cleaning Project",    "fail" => false },
-	{"cmd" => "make",                      "lbl" => "Building Project",    "fail" => true },
-	{"cmd" => "make examples",             "lbl" => "Building Tests",      "fail" => true },
-	{"cmd" => "./tests/run-tests.rb",      "lbl" => "Running Tests",       "fail" => true }
-	];
+build = StepByStep.new();
+build.addStep("rm `find ./ -name \"*~\"`", "Cleaning Backupfiles", false);
+build.addStep("fpcmake -r","Creating Makefiles",true);
+build.addStep("make clean","Cleaning Project",false);
+build.addStep("make", "Building Project",true);
+build.addStep("make examples", "Building Tests", true);
+build.addStep("./tests/run-tests.rb","Running Tests",true);
 
-steps.each { |step|
-  puts step["lbl"];
-  system(step["cmd"] + ">& error.log"); ## Execute the Step's Command
-  if step["fail"] then
-    if $? != 0 then
-      puts "###### ERROR.LOG START #####";
-      system("cat error.log");
-      puts "###### ERROR.LOG STOP #####";
-      exit 1;
-    end;
-  end;
-}
+puts "Processing Steps";
+build.process();
