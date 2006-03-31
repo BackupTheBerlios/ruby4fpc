@@ -1,14 +1,8 @@
 (*********************************************************************
   RUBY INTERFACE CONVERSTION PROJECT : Ruby4FPC
+  Author: Jon (BadQuanta) Sawyer
 *********************************************************************)
-(*Original Copyright Notification*************************************
-  ruby.h -
-  created at: Thu Jun 10 14:26:32 JST 1993
-  Copyright (C) 1993-2003 Yukihiro Matsumoto
-  Copyright (C) 2000  Network Applied Communication Laboratory, Inc.
-  Copyright (C) 2000  Information-technology Promotion Agency, Japan
-**********************************************************************)
-{$H+}
+{$LONGSTRINGS ON} //We are dealing w/ a C Library.. this is just easier.
 UNIT Ruby;
 Interface
   Uses
