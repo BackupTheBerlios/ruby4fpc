@@ -23,13 +23,14 @@ class StepByStep
 
     def process()
       @steps.each { |step|
-        puts step["lbl"];
+        puts step["lbl"] if false; # Change this so it checks to see if we are verbose.
         cmd = step["cmd"];
         logName = "/tmp/" + rand().to_s + ".log";
         cmd += ">& "+logName if step["doRedirect"];
         system(cmd); ## Execute the Step's Command
         if step["doFail"] then
           if $? != 0 then
+            puts step["lbl"] + " FAILED";
             if step["doRedirect"]
               puts "###### ERROR.LOG START #####";
               system("cat "+logName);

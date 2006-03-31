@@ -1,5 +1,5 @@
 [target]
-units = ruby
+units = ruby pascuby
 
 
 [compiler]
