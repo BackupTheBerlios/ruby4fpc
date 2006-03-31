@@ -1,0 +1,3 @@
+ALL Tests should begin witht he word "test" in lower case.
+
+During builds / commits these tests are run.
