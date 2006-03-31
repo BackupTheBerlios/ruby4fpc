@@ -8,7 +8,7 @@
   Copyright (C) 2000  Network Applied Communication Laboratory, Inc.
   Copyright (C) 2000  Information-technology Promotion Agency, Japan
 **********************************************************************)
-
+{$H+}
 UNIT Ruby;
 Interface
   Uses
@@ -24,16 +24,14 @@ Interface
     {$DEFINE RubyExt:=External 'ruby-static'}
     {$DEFINE RubyDcl:=CDECL; RubyExt}
 
-  {$IfDef ReadImp}
+  {$Define ReadInt}
     {$I ruby_h.pp}
     {$I intern_h.pp}
-  {$EndIf}
-
+  {$UnDef ReadInt}
 Implementation
 
-  {$IfDef ReadImp}
+  {$Define ReadImp}
     {$I ruby_h.pp}
     {$I intern_h.pp}
-  {$EndIf}
-  
+  {$UnDef ReadImp}
 end.

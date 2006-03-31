@@ -9,7 +9,7 @@ files = Dir[TESTSDIR + "test*"];
 
 files.each {|file|
   if FileTest.executable?(file) then
-    tests.addStep(file, "Running Test: "+file, true);
+    tests.addStep(file, "Running: "+file, true, true);
   end;
 }
 
