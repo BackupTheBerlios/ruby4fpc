@@ -1,5 +1,5 @@
 [target]
-programs = ruby_shell
+programs = test_000_basic
 
 [compiler]
 unitdir = ../units/
